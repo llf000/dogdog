@@ -52,7 +52,7 @@ onMounted(async () => {
       </div>
       <div class="container animate__animated animate__bounceInRight">
         <el-button :plain="true" @click="open1">开心一下吧</el-button>
-        <el-button @click="jump">去往首页</el-button>
+        <el-button @click="jump">看看狗狗</el-button>
       </div>
     </div>
   </div>

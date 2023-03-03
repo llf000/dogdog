@@ -1,6 +1,6 @@
 <template>
     <el-empty description="数据请求失败啦">
-        <el-button @click="jump">去往首页</el-button>
+        <el-button @click="jump">看看其他</el-button>
     </el-empty>
 </template>
 
