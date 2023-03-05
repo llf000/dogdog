@@ -10,18 +10,18 @@ import ElementPlus from "unplugin-element-plus/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // server: {
-  //   proxy: {
-  //     "/dog-api": {
-  //       target: "https://dog.ceo/",
-  //       changeOrigin: true,
-  //     },
-  //   },
-  // },
   plugins: [
     vue(),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      // 自动引入vue和vue-router相关函数
+      // imports: ["vue", "vue-router"],
+      resolvers: [
+        ElementPlusResolver({
+          // 自动引入修改主题色添加这一行，使用预处理样式，不添加将会导致使用ElMessage，ElNotification等组件时默认的主题色会覆盖自定义的主题色
+          // 若不增加该配置，在使用E了Message时需要自己引入 `import { ElMessage } from "element-plus";`
+          importStyle: "sass",
+        }),
+      ],
     }),
     Components({
       resolvers: [ElementPlusResolver({ importStyle: "sass" })],

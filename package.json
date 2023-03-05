@@ -35,12 +35,12 @@
   "description": "This template should help get you started developing with Vue 3 in Vite.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mianmalife/dogdog.git"
+    "url": "git+https://github.com/llf000/dogdog.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mianmalife/dogdog/issues"
+    "url": "https://github.com/llf000/dogdog/issues"
   },
-  "homepage": "https://github.com/mianmalife/dogdog#readme"
+  "homepage": "https://github.com/llf000/dogdog#readme"
 }

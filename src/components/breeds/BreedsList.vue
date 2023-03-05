@@ -16,7 +16,7 @@ watchEffect(async () => {
 
     const res = await request({
       method: "GET",
-      url: `https://dog.ceo/api/breed/${route.params.dog}/images/random/10`,
+      url: `https://dog.ceo/api/breed/${route.params.dog}/images`,
     });
 
     urls.value = res.message;
@@ -50,7 +50,7 @@ watchEffect(async () => {
   width: 100%;
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
   grid-gap: 20px;
   box-sizing: border-box;
   vertical-align: top;
@@ -58,11 +58,10 @@ watchEffect(async () => {
 }
 
 .el-image {
-  border: 10px solid #ebebe1;
+  border: 1vw solid #d3e1ca;
   border-radius: 1vw;
-  margin: 10px auto;
-  width: 300px;
-  height: 300px;
+  width: 30vw;
+  height: 30vw;
   display: block;
 }
 

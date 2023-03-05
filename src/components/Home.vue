@@ -44,15 +44,15 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div>
+  <div class="box">
     <h1 class="animate__animated animate__rubberBand">欢迎来到这个网站</h1>
     <div class="wraper">
       <div class="animate__animated animate__swing">
         <el-image :src="imgUrl" fit="cover" />
       </div>
       <div class="container animate__animated animate__bounceInRight">
-        <el-button :plain="true" @click="open1">开心一下吧</el-button>
-        <el-button @click="jump">看看狗狗</el-button>
+        <div><el-button @click="open1">开心一下</el-button></div>
+        <div><el-button @click="jump">看看狗狗</el-button></div>
       </div>
     </div>
   </div>
@@ -61,29 +61,43 @@ onMounted(async () => {
 
 <style scoped>
 h1 {
-  font-size: 50px;
-  text-align: center;
+  font-size: 6vw;
+
   color: #6b9c4e;
 }
 
 .wraper {
-  width: 80vw;
-  margin: 0 auto;
-  padding: 0 auro;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .container {
+  margin-left: 5vw;
+  gap: 5vw 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .el-image {
-  width: 300px;
-  height: 300px;
-  margin-right: 50px;
+  width: 30vw;
+  height: 30vw;
+}
+
+@media screen and (max-width:800px) {
+  h1 {
+    margin: 7vw auto;
+  }
+
+  .wraper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    margin: 5vw auto;
+  }
 }
 </style>

@@ -3,9 +3,13 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <div>
+  <div id="app">
     <RouterView />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+#app {
+  text-align: center;
+}
+</style>
