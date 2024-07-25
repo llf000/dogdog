@@ -3,15 +3,15 @@ import { ref, onMounted } from "vue";
 import { RouterLink, RouterView, useRouter, useRoute } from "vue-router";
 // import { ElMessage } from "element-plus";
 import axios from "axios";
-import request from '@/shared/request.js'
+import request from "@/shared/request.js";
 
-const router = useRouter()
-const route = useRoute()
-const dogList = ref([])
+const router = useRouter();
+const route = useRoute();
+const dogList = ref([]);
 const imgUrl = new URL("../assets/images/home.jpg", import.meta.url).href;
 let text = ref("");
 const open1 = () => {
-  axios.get("https://api.uixsj.cn/hitokoto/get?type=social").then(
+  axios.get("https://api.vvhan.com/api/text/joke").then(
     (response) => {
       text.value = response.data;
     },
@@ -28,19 +28,21 @@ const open1 = () => {
 };
 
 const jump = () => {
-  router.push({ path: `/appLayout/breeds-list/${dogList.value[0]}`, replace: true })
-}
+  router.push({
+    path: `/appLayout/breeds-list/${dogList.value[0]}`,
+    replace: true,
+  });
+};
 
 onMounted(async () => {
   const res = await request({
-    method: 'GET',
-    url: 'https://dog.ceo/api/breeds/list',
+    method: "GET",
+    url: "https://dog.ceo/api/breeds/list",
   });
-  dogList.value = res.message
-  localStorage.setItem('menu', JSON.stringify(res.message))
+  dogList.value = res.message;
+  localStorage.setItem("menu", JSON.stringify(res.message));
   // console.log(localStorage)
-})
-
+});
 </script>
 
 <template>
@@ -86,7 +88,7 @@ h1 {
   height: 30vw;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
   h1 {
     margin: 7vw auto;
   }
