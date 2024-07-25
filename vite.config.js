@@ -31,6 +31,10 @@ export default defineConfig({
     }),
     Icons(),
   ],
+  // 将存放打包结果的目录从dist修改为docs
+  build: {
+    outDir: "docs",
+  },
   // 自定义主题
   css: {
     preprocessorOptions: {
